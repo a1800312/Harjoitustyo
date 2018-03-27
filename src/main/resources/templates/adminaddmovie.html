@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>New movie</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-grid.css" th:href="@{css/bootstrap-grid.css}" />
+    <link rel="stylesheet" type="text/css" href="css/tyylit.css"/>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+	<div class="col-1">
+	</div>
+	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" id="newMovie">
+		<h1>Add new movie</h1>
+	</div>
+	<div class="col-1">
+	</div>
+	</div>
+	<div class="row">
+		<div class="col-1">
+		</div>
+		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" id="newMovie">
+		<form th:object="${movie}" th:action="@{savemovie}" action="#" method="post">
+		<div class="col">
+			<label for="movieName">Name</label>
+			<input type="text" th:field="*{movieName}" />
+		</div>
+		<div class="col">
+			<label for="genre">Genre</label>
+			<select th:field="*{genre}">
+			<option th:each="genre: ${genres}" th:value="${genre.genreId}"
+			th:text="${genre.genreName}"></option>
+			</select>
+		</div>
+		<div class="col">
+			<label for="movieLength">Length</label>
+			<input type="text" th:field="*{movieLength}" />
+		</div>
+		<div class="col">	
+			<label for="year">Year</label>
+			<select th:field="*{year}">
+			<option th:each="year: ${years}" th:value="${year.yearId}"
+			th:text="${year.yearName}"></option>
+			</select>
+		</div>
+		<div class="col">
+			<label for="actor">Best actor</label>
+			<select th:field="*{actor}">
+			<option th:each="actor: ${actors}" th:value="${actor.actorId}"
+			th:text="${actor.actorName}"></option>
+			</select>
+		</div>
+		<div class="col">
+			<label for="movieIMDBURL">IMDBURL</label>
+			<input type="text" th:field="*{movieIMDBURL}" />
+		</div>
+		<div class="col">
+			<label for="moviereview">Review</label>
+			<select th:field="*{moviereview}">
+			<option th:each="moviereview: ${moviereviews}" th:value="${moviereview.movieReviewId}"
+			th:text="${moviereview.reviewName}"></option>
+			</select>
+		</div>
+		<div class="col">
+			<label for="stars">Stars</label>
+			<select th:field="*{stars}">
+			<option th:each="stars: ${starss}" th:value="${stars.starId}"
+			th:text="${stars.starName}"></option>
+			</select>
+		</div>
+		<div class="col">
+			<input type="submit" value="Save" class="btn btn-success"></input>
+		</div>
+		</form>
+		<div class="col">
+		<a href="/back" class="btn btn-warning" id="buttons">Back</a>
+		</div>
+	</div>
+	<div class="col-1">
+	</div>
+	</div>
+	</div>
+</body>
+</html>

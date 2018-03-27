@@ -1,0 +1,76 @@
+body {
+	padding: 5px;
+	margin: 5px;
+	background-color: ;
+	background-image: url("heineken.jpg");
+	background-repeat: no-repeat;
+	background-size: 1920px 1080px;
+}
+
+table {
+	border: solid 3px #000000;
+	background-color: azure !important;
+}
+
+#buttons {
+	margin-bottom: 5px;
+}
+
+#adminpage {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: solid 3px #000000;
+	background-color: azure !important;
+}
+
+#navigate {
+	padding-top: 5px;
+	border: solid 3px #000000;
+	background-color: azure !important;
+	text-align: center;
+}
+
+#loginBox {
+	padding-bottom: 5px;
+	border: solid 3px #000000;
+	background-color: azure;
+	text-align: center;
+}
+
+#newMovie {
+	border: solid 3px #000000;
+	background-color: azure !important;
+	padding: 5px;
+	padding-top: 10px;
+	margin: 10px;
+	text-align: left;
+}
+
+.row {
+	margin-bottom: 5px;
+}
+
+.col {
+	margin-bottom: 5px;
+}
+
+#removepadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+p {
+
+}
+
+@media only screen and (max-width: 420px) {
+    body {
+        background-color: #000000;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    body {
+        background-color: #000000;
+    }
+}

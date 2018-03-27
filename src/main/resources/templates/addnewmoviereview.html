@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>New review for movie</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-grid.css" th:href="@{css/bootstrap-grid.css}" />
+    <link rel="stylesheet" type="text/css" href="css/tyylit.css"/>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+	<div class="col-1">
+	</div>
+	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" id="newMovie">
+		<h1>Add new review</h1>
+	</div>
+	<div class="col-1">
+	</div>
+	</div>
+	<div class="row">
+		<div class="col-1">
+		</div>
+		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" id="newMovie">
+		<form th:object="${moviereview}" th:action="@{savemoviereview}" action="#" method="post">
+		<div class="col">
+			<label for="reviewName">Review name</label>
+			<input type="text" th:field="*{reviewName}" />
+		</div>
+		<div class="col">
+			<label for="reviewText">Text of review</label>
+			<input type="text" th:field="*{reviewText}" />
+		</div>
+		<div class="col">
+			<input type="submit" value="Save" class="btn btn-success"></input>
+		</div>
+		</form>
+		<div class="col">
+		<a href="/back" class="btn btn-warning" id="buttons">Back</a>
+		</div>
+	</div>
+	<div class="col-1">
+	</div>
+	</div>
+	</div>
+</body>
+</html>

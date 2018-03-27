@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" 
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-grid.css" th:href="@{css/bootstrap-grid.css}" />
+    <link type="text/css" rel="stylesheet" href="css/tyylit.css" th:href="@{css/tyylit.css}"/>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	<div class="col" th:if="${param.error}">
+		<p>Invalid username and password.</p>
+    </div>
+    <div class="col" th:if="${param.logout}">
+		<p>You have been logged out.</p>
+    </div>
+    <div class="col">
+        <form th:action="@{/login}" method="post">
+            <div><label> User Name : <input type="text" name="username"/> </label></div>
+            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><input type="submit" value="Log in" class="btn btn-success"/></div>
+        </form>
+    </div>
+        <div class="col">
+		<a href="/movies" class="btn btn-warning" id="buttons">Movies</a>
+		</div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	</div>
+	</div>
+    </div>
+</body>
+</html>

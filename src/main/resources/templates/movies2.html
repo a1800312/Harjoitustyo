@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Movies reviewed</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-grid.css" th:href="@{css/bootstrap-grid.css}" />
+    <link rel="stylesheet" type="text/css" href="css/tyylit.css"/>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+     	<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+	     	<div class="col" id="adminpage">
+	     		<h1>Movies watched and reviewed</h1>
+	     	</div>
+     	</div>
+     	
+     	<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+     		<div class="col" id="loginBox">
+	     		<h3>Login page for admins only</h3>
+				<form th:action="@{/login}" method="post">
+					<input type="submit" value="Login page" class="btn btn-success"/>
+				</form>
+			</div>
+     	</div>
+     </div>
+     
+     <div class="row">
+	     <div class="col-1">
+	     </div>
+	     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+		     <div class="col" id="navigate">
+		     	<a href="/movies" class="btn btn-success" id="buttons">Basic table view of movies</a>
+		     	<a href="/movies2" class="btn btn-success" id="buttons">Solo movies in own tables</a>
+		     </div>
+	     </div>
+	     <div class="col-1">
+	     </div>
+	 </div>
+	
+	<div class="row">
+		<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" th:each = "movie : ${movies}">
+		    <table class="table table-striped">
+			    <thead>
+					<tr>
+					    <th scope="col"></th>
+					    <th scope="col">Information of movie</th>
+					</tr>
+				</thead>
+				<tbody>
+			    	<tr>
+			    		<th scope="row">Name</th>
+			    		<td th:text="${movie.movieName}"></td>
+			    	</tr>
+			    	<tr>
+			    		<th scope="row">Genre</th>
+			    		<td th:text="${movie.genre.genreName}"></td>
+			    	</tr>
+			    	<tr>
+			    		<th scope="row">Length</th>
+			    		<td th:text="${movie.movieLength}"></td>
+			    	</tr>
+			    	<tr>
+			    		<th scope="row">Year</th>
+			    		<td th:text="${movie.year.yearName}"></td>
+			    	</tr>
+			    	<tr>
+			    		<th scope="row">Best Actor</th>
+			    		<td th:text="${movie.actor.actorName}"></td>
+			    	</tr>
+			    	<tr>
+			    		<th scope="row">IMDB</th>
+			    		<td th:text="${movie.movieIMDBURL}"></td>
+			    	</tr>
+			    	<tr>
+			    		<th scope="row">Review</th>
+			    		<td th:text="${movie.moviereview.reviewText}"></td>
+			    	</tr>
+			    	<tr>
+			    		<th scope="row">Stars</th>
+			    		<td th:text="${movie.stars.starName}"></td>
+			    	</tr>
+			    </tbody>
+		    </table>
+	   	</div>
+	</div>
+	</div>
+</body>
+</html>
