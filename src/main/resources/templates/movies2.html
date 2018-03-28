@@ -35,8 +35,8 @@
 	     </div>
 	     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 		     <div class="col" id="navigate">
-		     	<a href="/movies" class="btn btn-success" id="buttons">Basic table view of movies</a>
-		     	<a href="/movies2" class="btn btn-success" id="buttons">Solo movies in own tables</a>
+		     	<a href="/movies" class="btn btn-success" id="buttons">Desktop & tablet</a>
+		     	<a href="/movies2" class="btn btn-success" id="buttons">Mobile</a>
 		     </div>
 	     </div>
 	     <div class="col-1">
@@ -47,10 +47,7 @@
 		<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" th:each = "movie : ${movies}">
 		    <table class="table table-striped">
 			    <thead>
-					<tr>
-					    <th scope="col"></th>
-					    <th scope="col">Information of movie</th>
-					</tr>
+					
 				</thead>
 				<tbody>
 			    	<tr>
