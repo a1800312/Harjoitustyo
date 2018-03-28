@@ -12,6 +12,10 @@ table {
 	background-color: azure !important;
 }
 
+#bold {
+	font-weight: bold;
+}
+
 #buttons {
 	margin-bottom: 5px;
 }
